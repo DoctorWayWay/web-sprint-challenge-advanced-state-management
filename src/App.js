@@ -23,7 +23,6 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-
         <main>
           <SmurfList />
           <AddForm />
@@ -36,8 +35,6 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     smurfs: state.smurfs,
-    isLoading: state.isLoading,
-    fetchError: state.fetchError,
   };
 };
 

@@ -18,15 +18,13 @@ const reducer = (state = initialState, action) => {
     case FETCH_SMURFS_INITIAL:
       return {
         ...state,
-        smurfs: [],
         isLoading: true,
         fetchError: "",
-        smurfErrorMessage: "",
       };
     case FETCH_SMURFS_SUCCESS:
       return {
         ...state,
-        smurfs: [action.payload],
+        smurfs: action.payload,
         isLoading: false,
         fetchError: "",
         smurfErrorMessage: "",
@@ -42,7 +40,6 @@ const reducer = (state = initialState, action) => {
     case FETCH_SMURFS_FAILURE:
       return {
         ...state,
-        smurfs: [],
         isLoading: false,
         fetchError: action.payload,
         smurfErrorMessage: "",
@@ -50,7 +47,6 @@ const reducer = (state = initialState, action) => {
     case ADD_SMURF_FAILURE:
       return {
         ...state,
-        smurfs: [...state.smurfs],
         isLoading: false,
         fetchError: "",
         smurfErrorMessage: action.payload,
