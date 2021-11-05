@@ -42,13 +42,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         fetchError: action.payload,
-        smurfErrorMessage: "",
       };
     case ADD_SMURF_FAILURE:
       return {
         ...state,
         isLoading: false,
-        fetchError: "",
         smurfErrorMessage: action.payload,
       };
     default:

@@ -35,7 +35,7 @@ export const addSmurf = (smurf) => {
 };
 
 export const addSmurfError = (error) => {
-  return { type: ADD_SMURF, payload: error };
+  return { type: ADD_SMURF_FAILURE, payload: error };
 };
 
 // Thunk Action
@@ -45,11 +45,10 @@ export const fetchSmurfs = () => {
     axios
       .get("http://localhost:3333/smurfs")
       .then((response) => {
-        // console.log(response);
         dispatch(fetchSuccess(response.data));
       })
       .catch((error) => {
-        dispatch(fetchFailure(error));
+        dispatch(fetchFailure("Failed to retrieve data &#9785;"));
       });
   };
 };
